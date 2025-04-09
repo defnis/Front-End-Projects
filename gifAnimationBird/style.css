@@ -1,0 +1,63 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(360deg, #01312f, #2d2d2c ,#ddf8de);
+}
+.box{
+    position: relative;
+    width: 300px;
+    height:400px;
+    margin: 40px;
+}
+.bg{
+    position: absolute;
+    background-image: url(bg2.jpg);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    border-radius: 2em;
+    transition: 1s;
+}
+.box:hover .bg{
+    transform: perspective(40px) rotateX(3deg) translateY(-50px);
+}
+.bird{
+    position: absolute;
+    width: 300px ;
+    height: 300px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    animation: gif 0.1s linear infinite;
+    bottom: 0;
+    animation-play-state: paused!important;
+    transition: 1s;
+}
+.box:hover .bird{
+    animation-play-state:running!important;
+    transform: translateY(-200px) translateX(-50px);
+}
+.box:nth-child(2) .bird{
+    animation: gif1 0.1s linear infinite;
+}
+.box:nth-child(2) .bg{
+    background-image: url(bg.jpg);
+}
+@keyframes gif{
+    from{
+        background-image: url(img21.png);
+    }
+    to{
+        background-image: url(img22.png);
+    }
+}
+@keyframes gif1{
+    from{
+        background-image: url(img11.png);
+    }
+    to{
+        background-image: url(img12.png);
+    }
+}
